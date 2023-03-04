@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name">
+            <div mat-header-cell *matHeaderCellDef> Name </div>
+            <td mat-cell *matCellDef="let technology"> {{technology.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <div mat-header-cell *matHeaderCellDef> Kategorie </div>
+            <td mat-cell *matCellDef="let technology"> {{technology.category}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ring">
+            <div mat-header-cell *matHeaderCellDef> Ring </div>
+            <td mat-cell *matCellDef="let technology"> {{technology.ring}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descTech">
+            <div mat-header-cell *matHeaderCellDef> Beschreibung Technologie </div>
+            <td mat-cell *matCellDef="let technology"> {{technology.descTech}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descClass">
+            <div mat-header-cell *matHeaderCellDef> Beschreibung Einordnung </div>
+            <td mat-cell *matCellDef="let technology"> {{technology.descClass}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay" (click)="onRowClicked(row)"></tr>
+    </table>
+</div>
