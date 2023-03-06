@@ -16,6 +16,8 @@ export class LoginComponent {
     password: new FormControl('', Validators.required)
   });
 
+  hide = true;
+
   constructor(
     private authService: AuthService
   ) {}
@@ -30,8 +32,8 @@ export class LoginComponent {
 
   get loginData() : User{
     return {
-      username : this.username,
-      password : this.password
+      username : this.username.value,
+      password : this.password.value
     };
   }
 

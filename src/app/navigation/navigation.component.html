@@ -4,6 +4,6 @@
     </div>
     <span class="fill-remaining-space"></span>
     <button mat-button routerLink="/">Radar</button>
-    <button mat-button>Erfassen</button>
+    <button mat-button routerLink="/details" *ngIf="isAdmin$ | async">Erfassen</button>
     <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
 </mat-toolbar>

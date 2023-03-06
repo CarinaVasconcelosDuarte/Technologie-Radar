@@ -10,11 +10,13 @@ import { AuthService } from '../auth/auth.service';
 export class NavigationComponent {
   // NOTE: $ -> indentifier to see that its an observable c:
   isLoggedIn$!: Observable<boolean>;
+  isAdmin$!: Observable<boolean>;
   
   constructor(private authService: AuthService) {};
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
+    this.isAdmin$ = this.authService.isAdminObserver;
   }
 
   onLogout() {

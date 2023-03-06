@@ -1,0 +1,51 @@
+<div class="container">
+    <mat-card class="formCard">
+        <mat-card-header>
+            <h1>{{title}}</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label> Name </mat-label>
+                        <input matInput formControlName="name" #nameInput>
+                        <mat-error> A name is required </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label> Category </mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option *ngFor="let category of categories" 
+                                [value]="category"> {{category}} </mat-option>
+                        </mat-select>
+                        <mat-error> A category is required </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label> Ring </mat-label>
+                        <mat-select formControlName="ring">
+                            <mat-option *ngFor="let ring of rings" 
+                                [value]="ring">{{ring}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="textAreas">
+                    <mat-form-field appearance="fill">
+                        <mat-label> Description of Technology </mat-label>
+                        <textarea matInput formControlName="descTech"></textarea>
+                        <mat-error> A description of the technology is required </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label> Description of Classification </mat-label>
+                        <textarea matInput formControlName="descRing"></textarea>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <p *ngIf="update">
+                        <mat-checkbox formControlName="published" value="true"> Publish after creation </mat-checkbox>
+                    </p>
+                    <button mat-raised-button color="primary" type="submit"> Submit </button>
+                    <button mat-raised-button (click)="return()"> Return </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

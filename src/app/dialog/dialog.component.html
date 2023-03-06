@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="category" fontIcon="border_all"></mat-icon>
+        Category: {{data.category}}
+    </div>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="ring" fontIcon="track_changes"></mat-icon>
+        Ring: {{data.ring}}
+    </div>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="ring" fontIcon="track_changes"></mat-icon>
+        Description Technology: 
+        <div>{{data.descTech}}</div>
+    </div>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="ring" fontIcon="track_changes"></mat-icon>
+        Description Classification: 
+        <div>{{data.descRing}}</div>
+    </div>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="ring" fontIcon="today"></mat-icon>
+        Created At: {{displayDate(data.createdAt)}} by {{data.createdBy}}
+    </div>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="ring" fontIcon="edit"></mat-icon>
+        Amount of changes: {{changes}}
+    </div>
+    <div *ngFor="let entry of data.history">
+        {{entry.name}} at {{displayDate(entry.updatedAt)}}
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCloseClick()">Return</button>
+</div>
