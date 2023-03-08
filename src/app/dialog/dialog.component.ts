@@ -18,8 +18,6 @@ export class DialogComponent {
     @Inject(LOCALE_ID) public locale: string,
   ) {
     this.changes = this.data.history.length;
-    console.log(this.data.history.length);
-    
   }
 
   ngOnInit() {

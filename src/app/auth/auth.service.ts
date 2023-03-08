@@ -40,7 +40,6 @@ export class AuthService {
                         .pipe(retry(1), catchError(this.handleError))
                         .subscribe(data => {
                           if(data._id != ''){
-                            console.log(data);
                             localStorage.setItem('token', data.token||'');
                             this.adminRole.next(data.isAdmin || false);
                             this.loggedIn.next(true);

@@ -54,7 +54,6 @@ export class DetailsComponent {
 
     // stop here if form is invalid
     if (this.form.invalid) {
-        console.log('invalid form');
         return;
     }
 
@@ -72,8 +71,6 @@ export class DetailsComponent {
   }
 
   private createTechnology() {
-    console.log('create');
-    console.log(this.form.value);
     this.apiService.createTechnology(this.form.value).subscribe(( data: any ) => {
       this.snackBar.openSnackBar('Technology created successfully!');
       this.router.navigate(['']);
@@ -81,7 +78,6 @@ export class DetailsComponent {
   }
 
   private updateTechnology() {
-    console.log('update');
     this.apiService.updateTechnology(this.id, this.form.value).subscribe(( data: any ) => {
       this.snackBar.openSnackBar(this.form.value.name + ' was updated successfully!');
       this.router.navigate(['']);

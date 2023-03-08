@@ -39,7 +39,6 @@ export class DashboardComponent {
 
   onPublish(technology: any) {
     this.apiService.publishTechnology(technology._id).subscribe(( data: {} ) => {
-      console.log(data);
       this.snackBar.openSnackBar('Technology published sucessfully!');
     })
   }
