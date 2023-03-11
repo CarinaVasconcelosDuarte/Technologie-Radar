@@ -4,13 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Users
 
-Admins__
-Username: CTO oder tech-lead__
-Password: demo1234__
+`
+Admins
+Username: CTO oder tech-lead
+Password: demo1234
 
-Normal User__
-Username: mitarbeiter__
-Password: demo1234__
+Normal User
+Username: mitarbeiter
+Password: demo1234
+`
 
 ## Development server
 
